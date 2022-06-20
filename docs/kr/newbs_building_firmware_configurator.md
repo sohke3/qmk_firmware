@@ -1,6 +1,6 @@
 # QMK Configurator
 
-[![QMK Configurator Screenshot](https://i.imgur.com/anw9cOL.png)](https://config.qmk.fm/
+[![QMK Configurator Screenshot](https://i.imgur.com/anw9cOL.png)](https://config.qmk.fm/)
 
 [QMK Configurator](https://config.qmk.fm)는 온라인으로 '.hex'나 '.bin' 형식의 QMK 펌웨어 파일을 생성하는 온라인 그래픽 유저 인터페이스입니다.
 
