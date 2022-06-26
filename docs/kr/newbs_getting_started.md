@@ -1,44 +1,44 @@
-# Setting Up Your QMK Environment
+# QMK 환경 설정하기
 
-Before you can build keymaps, you need to install some software and set up your build environment. This only has to be done once no matter how many keyboards you plan to compile firmware for.
+여러분의 키맵을 빌드할수 있게 되기 전에, 몇 가지 소프트웨어를 설치하고 빌드 환경을 설정해야 합니다. 얼마나 많은 키보드 펌웨어를 컴파일 하려는지는 모르지만, 이 과정은 단 한번만 하시면 됩니다.
 
-## 1. Prerequisites
+## 1. 전제 조건
 
-There are a few pieces of software you'll need to get started.
+시작하려면 몇 가지 소프트웨어가 필요합니다.There are a few pieces of software you'll need to get started.
 
-* [Text editor](newbs_learn_more_resources.md#text-editor-resources)
-  * You’ll need a program that can edit and save plain text files. The default editor that comes with many OS's does not save plain text files, so you'll need to make sure that whatever editor you chose does.
-* [Toolbox (optional)](https://github.com/qmk/qmk_toolbox)
-  * A graphical program for Windows and macOS that allows you to both program and debug your custom keyboard
+* [텍스트 에디터](newbs_learn_more_resources.md#text-editor-resources)
+  * 일반 텍스트 파일을 수정하고 저장할 수 있는 프로그램이 필요합니다. 많은 OS에 딸려오는 기본 에디터는 일반 텍스트 파일을 저장하지 않기 때문에, 선택할때 어떤 에디터가 지원되는지 확인하십시오.
+* [툴박스 (선택사항)](https://github.com/qmk/qmk_toolbox)
+  * 윈도우와 맥에서 사용가능한 GUI 프로그램. 커스텀 키보드를 프로그램하고 디버그 할 수 있게 해줍니다.
 
-?> If you haven't worked with the Linux/Unix command line before, there are a few basic concepts and commands you should learn. [These resources](newbs_learn_more_resources.md#command-line-resources) will teach you enough to be able to work with QMK.
+?> Linux/Unix 커맨드라인으로 작업해보지 않았다면, 몇 가지 기본 개념과 명령어를 익히셔야 합니다. [이 리소스들](newbs_learn_more_resources.md#command-line-resources)은 QMK를 작업하기에 충분히 가르쳐줄 것입니다.
 
-## 2. Prepare Your Build Environment :id=set-up-your-environment
+## 2. 빌드 환경을 준비하세요 :id=set-up-your-environment
 
-We've tried to make QMK as easy to set up as possible. You only have to prepare your Linux or Unix environment, then let QMK install the rest.
+우리는 QMK를 가능한 한 쉽게 설치할 수 있도록 노력해왔습니다. 여러분이 Linux/Unix 환경만 준비하시면, QMK가 나머지 것들을 설치할 것입니다.
 
 <!-- tabs:start -->
 
-### ** Windows **
+### ** 윈도우 **
 
-QMK maintains a Bundle of MSYS2, the CLI and all necessary dependencies. It also provides a handy `QMK MSYS` terminal shortcut to boot you directly into the correct environment.
+QMK는 CLI와 다른 필요한 플러그인과 같이, MSYS2와 관련된 것들을 관리하고 있습니다. 또한, 현재 환경에서 바로 띄울수 있는 'QMK MSYS' 터미널 숏컷이 제공됩니다.
 
-#### Prerequisites
+#### 전제 조건
 
-You will need to install [QMK MSYS](https://msys.qmk.fm/). The latest release is available [here](https://github.com/qmk/qmk_distro_msys/releases/latest).
+[QMK MSYS](https://msys.qmk.fm/)를 설치하셔야 합니다. 최신 버전은 [여기](https://github.com/qmk/qmk_distro_msys/releases/latest)에서 구하실 수 있습니다.
 
-Alternatively, if you'd like to manually install MSYS2, the following section will walk you through the process.
+아니면, 수동으로 MSYS2를 설치하시고 싶다면, 다음 섹션의 절차를 따르십시오.
 
 <details>
-  <summary>Manual Install</summary>
+  <summary>수동 설치</summary>
 
-?> Ignore the following steps if you use `QMK MSYS`.
+?> 'QMK MSYS'를 사용하시면, 이 과정을 무시하십시오.
 
-#### Prerequisites
+#### 전제 조건
 
-You will need to install MSYS2, Git and Python. Follow the installation instructions on https://www.msys2.org.
+MSYS2, Git, Python을 설치하셔야 합니다. https://www.msys2.org에서 설치 과정을 따르십시오.
 
-Once MSYS2 is installed, close any open MSYS terminals and open a new MinGW 64-bit terminal.
+MSYS2가 설치되면, 모든 열려있는 MSYS 터미널을 닫고, 새로운 MinGW 64비트 터미널을 여십시오.
 
 !> **NOTE:** The MinGW 64-bit terminal is *not* the same as the MSYS terminal that opens when installation is completed. Your prompt should say "MINGW64" in purple text, rather than "MSYS". See [this page](https://www.msys2.org/wiki/MSYS2-introduction/#subsystems) for more information on the differences.
 
