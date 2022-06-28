@@ -40,41 +40,41 @@ MSYS2, Git, Python을 설치하셔야 합니다. https://www.msys2.org에서 설
 
 MSYS2가 설치되면, 모든 열려있는 MSYS 터미널을 닫고, 새로운 MinGW 64비트 터미널을 여십시오.
 
-!> **NOTE:** The MinGW 64-bit terminal is *not* the same as the MSYS terminal that opens when installation is completed. Your prompt should say "MINGW64" in purple text, rather than "MSYS". See [this page](https://www.msys2.org/wiki/MSYS2-introduction/#subsystems) for more information on the differences.
+!> **알림:** MinDW 64bit 터미널은 설치가 끝날때 열리는 MSYS 터미널과는 *다릅니다*. 프롬프트에는 "MSYS"가 아니고, 보라색 글자로 "MINGW64"라고 써있어야 합니다. 차이점에 대해 더 많은 정보는 [이 페이지](https://www.msys2.org/wiki/MSYS2-introduction/#subsystems)를 보십시오.
 
-Then run the following command:
+그리고 아래와 같은 명령을 실행하십시오:
 
     pacman --needed --noconfirm --disable-download-timeout -S git mingw-w64-x86_64-toolchain mingw-w64-x86_64-python3-pip mingw-w64-x86_64-python-pillow
 
-#### Installation
+#### 설치
 
-Install the QMK CLI by running:
+아래의 명령어를 실행해 QMK CLI를 설치하십시오:
 
     python3 -m pip install qmk
 
 </details>
 
-### ** macOS **
+### ** 맥 OS **
 
-QMK maintains a Homebrew tap and formula which will automatically install the CLI and all necessary dependencies.
+QMK는 CLI와 다른 모든 필요한 부속 프로그램을 자동적으로 설치하는 홈브류와 포뮬라를 유지하고 있습니다.
 
-#### Prerequisites
+#### 전제 건조건
 
-You will need to install Homebrew. Follow the instructions on https://brew.sh.
+홈브류를 설치하셔야 합니다. https://brew.sh 에서 설명을 따르십시오.
 
-#### Installation
+#### 설치
 
-Install the QMK CLI by running:
+아래 명령어를 실행하여 QMK CLI를 설치하십시오. :
 
     brew install qmk/qmk/qmk
 
-### ** Linux/WSL **
+### ** 리눅스/WSL **
 
-?> **Note for WSL users**: By default, the installation process will clone the QMK repository into your WSL home directory, but if you have cloned manually, ensure that it is located inside the WSL instance instead of the Windows filesystem (ie. not in `/mnt`), as accessing it is currently [extremely slow](https://github.com/microsoft/WSL/issues/4197).
+?> **WSL 사용자들에게 알림**: 기본적으로, 설치 과정은 QMK 리포지토리를 여러분의 WSL 홈 디렉터리에 복사할 것입니다. 하지만 여러분이 수동으로 복사했다면, 윈도우즈 파일시스템이 *아니라* WSL 인스턴스에 있는지 확인하십시오(예: '/mnt' 안에 있지 않음). 거기에 접속하는 것이 현재는 [매우 느리기](https://github.com/microsoft/WSL/issues/4197) 때문입니다.
 
-#### Prerequisites
+#### 전제 조건
 
-You will need to install Git and Python. It's very likely that you already have both, but if not, one of the following commands should install them:
+Git과 Python을 설치하셔야 합니다. 아마 두 가지 모두 설치가 돼있겠지만, 만약 아니라면, 다음 명령어가 그것들을 설치할 것입니다.:
 
 * Debian / Ubuntu / Devuan: `sudo apt install -y git python3-pip`
 * Fedora / Red Hat / CentOS: `sudo yum -y install git python3-pip`
@@ -84,63 +84,63 @@ You will need to install Git and Python. It's very likely that you already have 
 * Sabayon: `sudo equo install dev-vcs/git dev-python/pip`
 * Gentoo: `sudo emerge dev-vcs/git dev-python/pip`
 
-#### Installation
+#### 설치
 
-Install the QMK CLI by running:
+다음 명령어를 실행하여 QMK CLI를 설치하십시오. :
 
     python3 -m pip install --user qmk
 
-#### Community Packages
+#### 커뮤니티 지패키지
 
-These packages are maintained by community members, so may not be up to date or completely functional. If you encounter problems, please report them to their respective maintainers.
+이 패키지들은 커뮤니티 멤버들에 의해 유지됩니다. 따라서, 최신이 아니거나 완전히 작동하지 않을수 있습니다. 문제가 발생한다면, 각각의 보수자에게 알려주십시오.
 
-On Arch-based distros you can install the CLI from the official repositories (NOTE: at the time of writing this package marks some dependencies as optional that should not be):
+Arch 기반의 배포판에서, 공식 리포지토리로부터 CLI를 설치하실수 있습니다. (알림: 이것을 작성중인 현재, 이 패키지는 필수적인 종속물을 선택적인 것으로 표시하고 있습니다.):
 
     sudo pacman -S qmk
 
-You can also try the `qmk-git` package from AUR:
+또한 `qmk-git` 패키지를 시도해 보실수다있습니다 from AUR:
 
     yay -S qmk-git
 
 ###  ** FreeBSD **
 
-#### Installation
+#### 설치
 
-Install the FreeBSD package for QMK CLI by running:
+아래의 명령어를 실행하여 QMK CLI의 FreeBSD 패키지를 설치하십시오 :
 
     pkg install -g "py*-qmk"
 
-NOTE: remember to follow the instructions printed at the end of installation (use `pkg info -Dg "py*-qmk"` to show them again).
+알림: 설치 마지막에 적힌 설명을 따라야 합니다. (다시 보려면 `pkg info -Dg "py*-qmk"` 를오사용하십시오).
 
 <!-- tabs:end -->
 
-## 3. Run QMK Setup :id=set-up-qmk
+## 3. QMK Setup 실행하기 :id=set-up-qmk
 
 <!-- tabs:start -->
 
-### ** Windows **
+### ** 윈도우즈 **
 
-After installing QMK you can set it up with this command:
-
-    qmk setup
-
-In most situations you will want to answer `y` to all of the prompts.
-
-### ** macOS **
-
-After installing QMK you can set it up with this command:
+QMK를 설치(인스톨)한 후, 다음 명령어로 셋업 할 수 있습니다. :
 
     qmk setup
 
-In most situations you will want to answer `y` to all of the prompts.
+대부분의 경우, 모든 프롬프트에 'y'로 대답할 것입니다.
 
-### ** Linux/WSL **
+### ** 맥OS **
 
-After installing QMK you can set it up with this command:
+QMK를 설치(인스톨)한 후, 다음 명령어로 셋업 할 수 있습니다. :
 
     qmk setup
 
-In most situations you will want to answer `y` to all of the prompts.
+대부분의 경우, 모든 프롬프트에 'y'로 대답할 것입니다.
+
+### **SL **
+
+QMK를 설치(인스톨)한 후, 다음 명령어로 셋업 할 수 있습니다. :
+
+    qmk setup
+
+대부분의 경우, 모든 프롬프트에 'y'로 대답할 것입니다.
 
 ?>**Note on Debian, Ubuntu and their derivatives**:
 It's possible, that you will get an error saying something like: `bash: qmk: command not found`.
@@ -150,29 +150,29 @@ Luckily, the fix is easy. Run this as your user: `echo 'PATH="$HOME/.local/bin:$
 
 ###  ** FreeBSD **
 
-After installing QMK you can set it up with this command:
+QMK를 설치(인스톨)한 후, 다음 명령어로 셋업 할 수 있습니다. :
 
     qmk setup
 
-In most situations you will want to answer `y` to all of the prompts.
+대부분의 경우, 모든 프롬프트에 'y'로 대답할 것입니다.
 
 <!-- tabs:end -->
 
-?> The qmk home folder can be specified at setup with `qmk setup -H <path>`, and modified afterwards using the [cli configuration](cli_configuration.md?id=single-key-example) and the variable `user.qmk_home`. For all available options run `qmk setup --help`.
+?> 셋업 할 때, `qmk setup -H <path>`으로 QMK 홈 폴더를 설정할 수 있습니다. 혹은 설치 후에, [cli configuration](cli_configuration.md?id=single-key-example)과 `user.qmk_home`을 사용하여 설정 할 수 있습니다. 모든 가능한 옵션은 `qmk setup --help`으로 확인하십시오.
 
-?> If you already know how to use GitHub, [we recommend that you follow these instructions](getting_started_github.md) and use `qmk setup <github_username>/qmk_firmware` to clone your personal fork. If you don't know what that means you can safely ignore this message.
+?> 깃헙을 어떻게 사용하는지 아신다면, [이 설명을 따르기를 권장합니다.](getting_started_github.md) 그리고 당신의 개인 포크를 복사하려면 `qmk setup <github_username>/qmk_firmware` 을 사용하십시오. 무슨 뜻인지 모르겠다면, 이 메시지를 무시하셔도 괜찮습니다.
 
-## 4. Test Your Build Environment
+## 4. 빌드 환경 테스트하기
 
-Now that your QMK build environment is set up, you can build a firmware for your keyboard. Start by trying to build the keyboard's default keymap. You should be able to do that with a command in this format:
+QMK 빌드 환경이 설정되었으ㅡㅁ로, 여러분의 키보드 펌웨어를 빌드하실수 있습니다. 키보드의 기본 키맵을 빌드하는 것으로 시작해보세요. 다음의 형식과 같은 명령어로 할 수 있습니다.:
 
     qmk compile -kb <keyboard> -km default
 
-For example, to build a firmware for a Clueboard 66% you would use:
+예를 들어, Clueboard 66%의 펌웨어를 빌드하려면, 이렇게 써야 합니다.:
 
     qmk compile -kb clueboard/66/rev3 -km default
 
-When it is done you should have a lot of output that ends similar to this:
+이것이 실행되면, 아래와 비슷하게 끝나는 많은 결과를 얻을 것입니다.:
 
 ```
 Linking: .build/clueboard_66_rev3_default.elf                                                       [OK]
@@ -182,6 +182,6 @@ Checking file size of clueboard_66_rev3_default.hex                             
  * The firmware size is fine - 26356/28672 (2316 bytes free)
 ```
 
-# Creating Your Keymap
+# 여러분의 키맵을 생성하세요
 
-You are now ready to create your own personal keymap! Move on to [Building Your First Firmware](newbs_building_firmware.md) for that.
+여러분은 자신만의 키맵을 만들 준비가 됐습니다! [첫 펌웨어 만들기](newbs_building_firmware.md)에서 진행해보세요.
