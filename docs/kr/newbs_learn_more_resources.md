@@ -1,8 +1,8 @@
-# Learning Resources
+# 학습 자원
 
-These resources are aimed at giving new members in the QMK community more understanding to the information provided in the Newbs docs.
+이 리소스들은 QMK 커뮤니티의 새 회원들이 Newbs 문서들에 적힌 정보를 더 이해하게 하기 위한 것입니다.
 
-### QMK resources
+### QMK 리소스
 
 * [Thomas Baart's QMK Basics Blog](https://thomasbaart.nl/category/mechanical-keyboards/firmware/qmk/qmk-basics/) – A user-created blog covering the basics of how to use QMK Firmware, as seen from a new user's perspective.
 
