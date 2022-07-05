@@ -32,6 +32,6 @@ QMK는 찾아볼 많은 기능들이 있으며, 파헤쳐볼 많은 참조 문�
     * [/r/olkb](https://www.reddit.com/r/olkb/)
     * [디스코드](https://discord.gg/Uq7gcHh)
 * 밑의 "Edit This Page"를 클릭하여 문서들에 기여해주세요
-* [여러분의 언어로 우리 문서를 번여해주세요](translating.md)
+* [여러분의 언어로 우리 문서를 번역해주세요](translating.md)
 * [버그를 제보하세요](https://github.com/qmk/qmk_firmware/issues/new/choose)
 * [Open a Pull Request](contributing.md)
