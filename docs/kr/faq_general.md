@@ -1,36 +1,36 @@
-# Frequently Asked Questions
+# 자주 묻는 질문들
 
-## What is QMK?
+## QMK가 무엇입니까?
 
-[QMK](https://github.com/qmk), short for Quantum Mechanical Keyboard, is a group of people building tools for custom keyboards. We started with the [QMK firmware](https://github.com/qmk/qmk_firmware), a heavily modified fork of [TMK](https://github.com/tmk/tmk_keyboard).
+Quantum Mechanical Keyboard의 약자인 [QMK](https://github.com/qmk)는, 커스텀 키보드용의 툴을 빌드하는 사람들의 그룹입니다. [TMK](https://github.com/tmk/tmk_keyboard)를 대폭으로 수정한 포크인 [QMK firmware](https://github.com/qmk/qmk_firmware)로부터 시작했습니다.
 
-## I don't know where to start!
+## 어디서부터 시작해야할지 모르겠습니다!
 
-If this is the case, then you should start with our [Newbs Guide](newbs.md). There is a lot of great info there, and that should cover everything you need to get started.
+이 경우, [초보자 가이드](newbs.md)부터 시작해야 합니다. 여기에는 훌륭한 정보가 많이 있으며, 그것들은 당신이 시작하기에 필요한 모든 것을 커버할 수 있습니다.
 
-If that's an issue, hop onto the [QMK Configurator](https://config.qmk.fm), as that will handle a majority of what you need there.
+문제가 있는 경우, [QMK Configurator](https://config.qmk.fm)에 접속해보십시오. 당신이 필요한 것의 대부분을 처리 할 수 있을 것입니다.
 
-## How can I flash the firmware I built?
+## 내가 빌드한 펌웨어를 어떻게 플래시할 수 있습니까?
 
-First, head to the [Compiling/Flashing FAQ Page](faq_build.md). There is a good deal of info there, and you'll find a bunch of solutions to common issues there.
+먼저, [컴파일/플래시 FAQ 페이지](faq_build.md에 접속해 보십시오. 거기에는 많은 정보가 있으며, 대부분의 일반적인 이슈의 해결책을 찾으실수 있을 것입니다.
 
-## What if I have an issue that isn't covered here?
+## 여기에서 커버하지 못하는 이슈가 있으면 어떻게 합니까?
 
-Okay, that's fine. Then please check the [open issues in our GitHub](https://github.com/qmk/qmk_firmware/issues) to see if somebody is experiencing the same thing (make sure it's not just similar, but actually the same).
+좋습니다, 문제 없습니다. 그럴땐 [Github에서 열린 이슈들](https://github.com/qmk/qmk_firmware/issues)을 확인해서, 누군가가 같은 경험을 하지 않았는지 살펴보십시오. (비슷하기만 한 것이 아니고, 정확히 같은 것인지 확인하십시오).
 
-If you can't find anything, then please open a [new issue](https://github.com/qmk/qmk_firmware/issues/new)!
+아무것도 찾지 못했다면, [새 이슈](https://github.com/qmk/qmk_firmware/issues/new)를 열어오보십시오!
 
-## What if I found a bug?
+## 버그를 찾았으면 어떻게 해야 합니?
 
-Then please open an [issue](https://github.com/qmk/qmk_firmware/issues/new), and if you know how to fix it, open up a Pull Request on GitHub with the fix.
+[이슈](https://github.com/qmk/qmk_firmware/issues/new)를 열어 주십시오. 그리고 어떻게 고치는지도 아신다면, Github에서 고치는 방법과 함께 풀 리퀘스트를 열어 주십시오.
 
-## But `git` and `GitHub` are intimidating!
+## 하지만 `git`과 `GitHub`가 무섭습니다!
 
-Don't worry, we have some pretty nice [Guidelines](newbs_git_best_practices.md) on how to start using `git` and GitHub to make things easier to develop.
+걱정하지 마십시오, 개발이 쉬워지도록 `git'과 Github를 어떻게 사용해야할지 알려드릴 예쁘고 멋진 [가이드라인](newbs_git_best_practices.md)이 있습니다.
 
-Additionally, you can find additional `git` and GitHub related links [here](newbs_learn_more_resources.md).
+또, 추가적인 `git`과 깃허브에 관련된 링크를 [여기](newbs_learn_more_resources.md)에서 보실 수 다습니다.
 
-## I have a Keyboard that I want to add support for
+## 지원을 추가하고싶은 키보드가 있습니
 
 Awesome! Open up a Pull Request for it. We'll review the code, and merge it!
 
