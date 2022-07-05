@@ -1,29 +1,29 @@
-# Bootmagic Lite :id=bootmagic-lite
+# 부트매직 라이트 :id=bootmagic-lite
 
-The Bootmagic Lite feature that only handles jumping into the bootloader. This is great for boards that don't have a physical reset button, giving you a way to jump into the bootloader
+부트로더에 대한 점핑만을 처리하는 기능입니다. 이 기능은 물리적인 리셋 버튼이 없는 보드에서 부트로더에 접근하기에 매우 적합합니다.
 
-On some keyboards Bootmagic Lite is disabled by default. If this is the case, it must be explicitly enabled in your `rules.mk` with:
+몇몇 키보드에서 부트매직 라이트는 기본적으로 이용 불가능하게 설정되어 있습니다. 이러한 경우에, `rules.mk`를 사용하여 가능하게 만들어야 합니다. : 
 
 ```make
-BOOTMAGIC_ENABLE = yes
+BOOTMAGIC_ENABLE = lite
 ```
 
-Additionally, you may want to specify which key to use. This is especially useful for keyboards that have unusual matrices. To do so, you need to specify the row and column of the key that you want to use. Add these entries to your `config.h` file:
+더욱이, 어떤 키를 사용하도록 지정할지 원할 수도 있습니다. 이것은 일반적이지 않은 매트릭스를 사용하는 키보드에 유용합니다. 이것을 사용하려면, 사용하려는 키의 행과 열을 지정해야 합니다. `config.h` 파일에 아래의 엔트리를 추가하십시오. :
 
-```c
+```
 #define BOOTMAGIC_LITE_ROW 0
 #define BOOTMAGIC_LITE_COLUMN 1
 ```
 
-By default, these are set to 0 and 0, which is usually the "ESC" key on a majority of keyboards.
+기본으로, 이것들은 0과 0으로 설정되어 있는데, 보통 "ESC" 키에 해당합니다.
 
-And to trigger the bootloader, you hold this key down when plugging the keyboard in. Just the single key.
+그리고, 부트로더를 기동하려면, 키보드를 꽂을 때 이 키를 누른 채로 유지하십시오. 딱 한 키만입니다.
 
-!> Using Bootmagic Lite will **always reset** the EEPROM, so you will lose any settings that have been saved.
+!> 부트매직 라이트를 사용하면 EEPROM을 **항상 리셋**합니다. 따라서, 저장된 모든 세팅을 잃게 될 것입니다.
 
-## Split Keyboards
+## 스플릿 키보드
 
-When [handedness](feature_split_keyboard.md#setting-handedness) is predetermined via options like `SPLIT_HAND_PIN` or `EE_HANDS`, you might need to configure a different key between halves. To identify the correct key for the right half, examine the split key matrix defined in the `<keyboard>.h` file, e.g.:
+`SPLIT_HAND_PIN` 혹은 `EE_HANDS`와 같은 옵션으로 [어느 쪽 손을 사용할지](feature_split_keyboard.md#setting-handedness) 가 미리 정해져 있다면, 좌우 별도로 다른 키를 설정해야 합니다. 예를 들어, `<keyboard>.h` 파일에서 설정된 오른쪽 스플릿 키 매트릭스에서 바른 키를 지정하려면 :
 
 ```c
 #define LAYOUT_split_3x5_2( \
@@ -44,20 +44,20 @@ When [handedness](feature_split_keyboard.md#setting-handedness) is predetermined
     }
 ```
 
-If you pick the top right key for the right half, it is `R05` on the top layout. Within the key matrix below, `R05` is located on row 4 columnn 4. To use that key as the right half's Bootmagic Lite trigger, add these entries to your `config.h` file:
+만약, 오른쪽 스플릿의 가장 위쪽, 가장 오른쪽의 키를 선택했다면, 그것은 위 레이아웃에서 `R05` 입니다. 아래의 키 매트릭스에서, `R05`는 4행 4열에 위치합니다. 오른쪽 스플릿의 부트매직 라이트 트리거로 그 키를 사용하려면, `config.h`파일에 이 엔트리들을 추가하십시오. :
 
 ```c
 #define BOOTMAGIC_LITE_ROW_RIGHT 4
 #define BOOTMAGIC_LITE_COLUMN_RIGHT 4
 ```
 
-?> These values are not set by default.
+?> 이 값들은 기본으로 설정되어 있지 않습니다.
 
-## Advanced Bootmagic Lite
+## 고급 무트매직 라이트
 
-The `bootmagic_lite` function is defined weakly, so that you can replace this in your code, if you need. A great example of this is the Zeal60 boards that have some additional handling needed.
+`bootmagic_lite` 함수는 약하게 정의되어 있습니다. 따라서, 필요하다면, 코드 안에서 그것을 대체할 수 있습니다. 좋은 예시는 Zeal60 보드로, 몇 가지를 추가적으로 처리해야 합니다.
 
-To replace the function, all you need to do is add something like this to your code:
+함수를 바꾸려면, 코드 안에 이런 것들을 넣으면 됩니다. :
 
 ```c
 void bootmagic_lite(void) {
@@ -72,10 +72,10 @@ void bootmagic_lite(void) {
 }
 ```
 
-You can define additional logic here. For instance, resetting the EEPROM or requiring additional keys to be pressed to trigger Bootmagic Lite. Keep in mind that `bootmagic_lite` is called before a majority of features are initialized in the firmware.
+추가적인 기능을 여기에 추가할수 있습니다. 예를 들어, EEPROM을 리셋하거나, 부트매직을 기동할때 눌러야 할 추가적인 키같은 것들입니다. `bootmagic_lite`가 펌웨어 내부의 기능들이 초기화되기 이전에 불러와진다는 것을 명심하십시오.
 
-## Addenda
+## 추가 사
 
-To manipulate settings that were formerly configured through the now-deprecated full Bootmagic feature, see [Magic Keycodes](keycodes_magic.md).
+이제는 사용되지 않는 풀 부트매직 기능의 세팅을 조작하려면, [매직 키코드](keycodes_magic.md) 문서를 보십시오.
 
-The Command feature, formerly known as Magic, also allows you to control different aspects of your keyboard. While it shares some functionality with Magic Keycodes, it also allows you to do things that Magic Keycodes cannot, such as printing version information to the console. For more information, see [Command](feature_command.md).
+전에는 **매직**으로 알려졌던 커맨드 기능은, 키보드의 다른 양상을 사용할수 있게 해줍니다. 매직 키코드와 몇몇 기능을 공유하지만, 콘솔에 버전을 프린트하는 것처럼, 매직 키코드는 불가능한 기능을 사용하게 해줍니다. 더 많은 정보를 보시려면, [커맨드](feature_command.md) 문서를 보십시오.
