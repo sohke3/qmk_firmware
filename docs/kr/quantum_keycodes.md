@@ -1,17 +1,17 @@
-# Quantum Keycodes
+#  퀀텀 키코드 (Quantum Keycodes)
 
-Quantum keycodes allow for easier customization of your keymap than the basic ones provide, without having to define custom actions.
+퀀텀 키코드는 커스텀 액션을 지정하지 않더라도, 기본적인 키코드보다 용이하게 키맵을 커스텀 할 수 있게 해줍니다.
 
-All keycodes within quantum are numbers between `0x0000` and `0xFFFF`. Within your `keymap.c` it may look like you have functions and other special cases, but ultimately the C preprocessor will translate those into a single 4 byte integer. QMK has reserved `0x0000` through `0x00FF` for standard keycodes. These are keycodes such as `KC_A`, `KC_1`, and `KC_LCTL`, which are basic keys defined in the USB HID specification.
+퀀텀의 키코드들은 '0x0000'과 '0xFFFF' 사이의 숫자들입니다. 'keymap.c' 안에, 함수들과 다른 특수한 경우들이 포함된 것처럼 보이겠지만, 궁극적으로는 C 전처리기가 그것들을 4바이트 정수로 바꿀 것입니다. QMK는 '0x0000'부터 '0x00FF'까지를 일반적인 키코드로 예약해두고 있습니다. 이것들은 'KC_A', 'KC_1', 'KC_LCTL'처럼, USB HID 스펙에 정의된 기본적인 키코드들입니다.
 
-On this page we have documented keycodes between `0x00FF` and `0xFFFF` which are used to implement advanced quantum features. If you define your own custom keycodes they will be put into this range as well.
+이 페이지에서, 우리는 고급 퀀텀 특징을 실행하기 위한 '0x00FF'와 '0XFFFF'사이의 키코드를 정리했습니다. 당신이 자신만의 커스텀 키코드를 정의한다면, 그것들은 이 범위 안에 놓일 것입니다.
 
 ## QMK Keycodes :id=qmk-keycodes
 
 |Key              |Aliases  |Description                                                                      |
 |-----------------|---------|---------------------------------------------------------------------------------|
-|`QK_BOOTLOADER`  |`QK_BOOT`|Put the keyboard into bootloader mode for flashing                               |
-|`QK_DEBUG_TOGGLE`|`DB_TOGG`|Toggle debug mode                                                                |
-|`QK_CLEAR_EEPROM`|`EE_CLR` |Reinitializes the keyboard's EEPROM (persistent memory)                          |
-|`QK_MAKE`        |         |Sends `qmk compile -kb (keyboard) -km (keymap)`, or `qmk flash` if shift is held |
-|`QK_REBOOT`      |`QK_RBT` |Resets the keyboard. Does not load the bootloader                                |
+|`QK_BOOTLOADER`  |`QK_BOOT`|키보드를 플래시하기 위한 부트로더 모드로 만듭니다                                    |
+|`QK_DEBUG_TOGGLE`|`DB_TOGG`|디버그 모드를 커고 끕니다                                                          |
+|`QK_CLEAR_EEPROM`|`EE_CLR` |키보드의 EEPROM(비휘발성 메모리)를 초기화합니다                                     |
+|`QK_MAKE`        |         |shift가 눌려있으면 `qmk compile -kb (keyboard) -km (keymap)`, 혹은 `qmk flash`를 보냅니다 |
+|`QK_REBOOT`      |`QK_RBT` |키보드를 리셋합니다. 부트로더를 로드하지 않습니다                                    |
