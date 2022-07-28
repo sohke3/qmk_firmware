@@ -1,10 +1,10 @@
-# Miscellaneous FAQ
+# 이것저것 FAQ
 
-## How do I test my keyboard? :id=testing
+## 어떻게 내 키보드를 테스트 합니까? :id=testing
 
 Testing your keyboard is usually pretty straightforward. Press every single key and make sure it sends the keys you expect. You can use [QMK Configurator](https://config.qmk.fm/#/test/)'s test mode to check your keyboard, even if it doesn't run QMK.
 
-## Safety Considerations
+## 안전 관련항고려사항
 
 You probably don't want to "brick" your keyboard, making it impossible
 to rewrite firmware onto it.  Here are some of the parameters to show
@@ -44,7 +44,7 @@ Size after:
   the firmware repeatedly and continually; that'll burn the EEPROM
   eventually.
 
-## NKRO Doesn't work
+## NKRO가 동작하지 않습니다
 First you have to compile firmware with the build option `NKRO_ENABLE` in **Makefile**.
 
 Try `Magic` **N** command(`LShift+RShift+N` by default) when **NKRO** still doesn't work. You can use this command to toggle between **NKRO** and **6KRO** mode temporarily. In some situations **NKRO** doesn't work and you will need to switch to **6KRO** mode, in particular when you are in BIOS.
@@ -71,7 +71,7 @@ You need to define `EXTRAKEY_ENABLE` in `rules.mk` to use them in QMK.
 EXTRAKEY_ENABLE = yes          # Audio control and System control
 ```
 
-## Wake from Sleep Doesn't Work
+## 절전모드 깨우기가 동작하지 않습니다
 
 In Windows check `Allow this device to wake the computer` setting in **Power Management** property tab of **Device Manager**. Also check your BIOS settings. Pressing any key during sleep should wake host.
 
@@ -94,7 +94,7 @@ If you would like to keep JTAG enabled, just add the following to your `config.h
 #define NO_JTAG_DISABLE
 ```
 
-## USB 3 Compatibility
+## USB 3 
 Some problems can be fixed by switching from a USB 3.x port to a USB 2.0 port.
 
 
