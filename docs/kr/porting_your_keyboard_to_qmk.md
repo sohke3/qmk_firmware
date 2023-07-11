@@ -1,11 +1,14 @@
-# Adding Your Keyboard to QMK
+# QMK에 키보드 추가하기
 
-This page describes the support for [Compatible Microcontrollers](compatible_microcontrollers.md) in QMK.
+QMK를 지원하는 마이크로 컨트롤러에 대한 설명은 [링크](compatible_microcontrollers.md)를 참고해주세요. 
 
-If you have not yet you should read the [Keyboard Guidelines](hardware_keyboard_guidelines.md) to get a sense of how keyboards fit into QMK.
+먼저 [키보드 가이드라인](hardware_keyboard_guidelines.md)을 읽어주세요. QMK가 어떻게 키보드에 적용되는지에 대한 이해가 필요합니다.
 
 
-QMK has a number of features to simplify working with keyboards. For most, you don't have to write a single line of code. To get started, run `qmk new-keyboard`:
+QMK에는 펌웨어 작업을 단순화하는 여러 가지 기능이 있습니다. 대부분의 경우 코드를 일일이 작성할 필요가 없습니다.
+
+`qmk new-keyboard`: 명령어를 실행해주세요.
+
 
 ```
 $ qmk new-keyboard
@@ -52,11 +55,13 @@ Please enter your choice:  [12]
 Ψ And build with qmk compile -kb mycoolkeeb -km default.
 ```
 
-This will create all the files needed to support your new keyboard, and populate the settings with default values. Now you just need to customize it for your keyboard.
+이 명령어는 여러분의 새 키보드를 설정하기 위해 필요한 모든 파일을 생성해줍니다. (모든 값은 기본값으로 설정됩니다.) 여러분의 키보드에 맞게 코드를 수정해주시기만 하면 됩니다.
+
 
 ## `readme.md`
+여러분의 키보드에 대한 설명은 `readme.md`파일에 작성해주세요.
 
-This is where you'll describe your keyboard. Please follow the [Keyboard Readme Template](documentation_templates.md#keyboard-readmemd-template) when writing your `readme.md`. You're encouraged to place an image at the top of your `readme.md`, please use an external service such as [Imgur](https://imgur.com) to host the images.
+작성하실 때에는 [readme 템플릿](documentation_templates.md#keyboard-readmemd-template)을 따라주세요. 이미지는 `readme.md`의 상단에 위치하는 것이 좋습니다. [Imgur](https://imgur.com)와 같은 외부 서비스를 이용해서 이미지를 첨부하세요.
 
 ## `info.json`
 
